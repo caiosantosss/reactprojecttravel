@@ -1,7 +1,7 @@
 import React from 'react';
 import GoogleMapReact from 'google-map-react';
 import { Paper, Typography, useMediaQuery } from '@material-ui/core';
-import LocationOutlinedIcon from '@material-ui/icons/LocationOutlined';
+import LocationOnOutlinedIcon from '@material-ui/icons/LocationOnOutlined';
 import Rating from '@material-ui/lab/Rating';
 
 import useStyles from './styles';
@@ -17,7 +17,7 @@ const Map = () => {
         bootstrapURLKeys={{ key: 'AIzaSyBY6Vc5cHRlvN2aIzQwdt-qB1OBGPtkQJA' }}
         defaultCenter={coordinates}
         center={coordinates}
-        defaultZoom={isMobile ? 15 : 10}
+        defaultZoom={14}
         marginBottom={[50, 50, 50, 50]}
         options={''}
         onChange={''}
