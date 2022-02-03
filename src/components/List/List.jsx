@@ -34,6 +34,13 @@ const List = () => {
           <MenuItem value={4.5}>Above 4.5</MenuItem>
         </Select>
       </FormControl>
+      <Grid container spacing={3} className={classes.list}>
+        {places?.map((place, i) => (
+          <Grid item xs={12} sm={6} md={4} lg={3} key={i}>
+            <CARD />
+          </Grid>
+        ))};
+      </Grid>
     </div>
   );
 };
