@@ -17,6 +17,7 @@ const App = () => {
   const [coordinates, setCoordinates] = useState({});
   const [bounds, setBounds] = useState({});
 
+  // const [autocomplete, setAutocomplete] = useState(null);
   const [isLoading, setIsLoading] = useState(false);
   const [type, setType] = useState('restaurants');
   const [rating, setRating] = useState('');
@@ -28,7 +29,7 @@ const App = () => {
   }, []);
 
   useEffect(() => {
-    const filteredPlaces = places.filter((place) => place.rating >= rating);
+    const filteredPlaces = places.filter((place) => Number(place.rating) >= rating);
 
     setFilteredPlaces(filteredPlaces);
   }, [rating]);
@@ -49,6 +50,15 @@ const App = () => {
     }
   }, [type, bounds]);
 
+  // const onLoad = (autoC) => setAutocomplete(autoC);
+
+  // const onPlaceChanged = () => {
+  //   const lat = autocomplete.getPlace().geometry.location.lat();
+  //   const lng = autocomplete.getPlace().geometry.location.lng();
+
+  //   setCoords({ lat, lng });
+  // };
+
   return (
     <>
       <CssBaseline />
@@ -65,7 +75,7 @@ const App = () => {
             setRating={setRating}
           />
         </Grid>
-        <Grid item xs={12} md={4}>
+        <Grid item xs={12} md={8} style={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
           <Map
             setCoordinates={setCoordinates}
             setBounds={setBounds}

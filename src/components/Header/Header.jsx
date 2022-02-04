@@ -1,5 +1,5 @@
-import React from 'react';
-import { AutoComplete } from '@react-google-maps/api';
+import React, { useState } from 'react';
+import { Autocomplete } from '@react-google-maps/api';
 import { AppBar, Toolbar, Typography, InputBase, Box } from '@material-ui/core';
 import SearchIcon from '@material-ui/icons/Search';
 
@@ -28,14 +28,14 @@ const Header = ({ setCoordinates }) => {
           <Typography variant="h6" className={classes.title}>
             Explore new places to visit
           </Typography>
-          <AutoComplete onLoad={onLoad} onPlaceChanged={onPlaceChanged}>
+          <Autocomplete onLoad={onLoad} onPlaceChanged={onPlaceChanged}>
             <div className={classes.search}>
               <div className={classes.searchIcon}>
                 <SearchIcon />
               </div>
               <InputBase placeholder='Search...' classes={{ root: classes.inputRoot, input: classes.inputInput }} />
             </div>
-          </AutoComplete>
+          </Autocomplete>
         </Box>
       </Toolbar>
     </AppBar>

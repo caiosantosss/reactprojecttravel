@@ -44,7 +44,7 @@ const List = ({ places, childClicked, isLoading, type, setType, rating, setRatin
           </FormControl>
           <Grid container spacing={3} className={classes.list}>
             {places?.map((place, i) => (
-              <Grid item xs={12} sm={6} md={4} lg={3} key={i}>
+              <Grid ref={elRefs[i]} key={i} item xs={12}>
                 <PlaceDetails
                   place={place}
                   selected={Number(childClicked) === i}
